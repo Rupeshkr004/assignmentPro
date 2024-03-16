@@ -1,0 +1,76 @@
+This Terraform configuration provisions the necessary Azure infrastructure components to support the deployment of a sample application that prints "Welcome to 2022" along with user agent info on Azure Kubernetes Service (AKS).
+
+## Overview
+
+This Terraform setup creates the following Azure resources:
+
+- Resource Group: Provides a logical container for grouping Azure resources.
+- Virtual Network (VNet) and Subnet: Defines the networking infrastructure for the AKS cluster.
+- Storage Account and Container: Stores the `terraform.tfstate` files for state management.
+
+## Prerequisites
+
+Before running this Terraform configuration, ensure you have the following prerequisites:
+
+- [Terraform](https://www.terraform.io/downloads.html) installed on your local machine.
+- An Azure account with appropriate permissions to create and manage resources.
+- Azure CLI installed for authentication and interaction with Azure services.
+
+## Usage
+
+1. Clone this repository to your local machine:
+
+    ```bash
+    git clone https://github.com/yourusername/welcome-to-2022.git
+    cd welcome-to-2022/terraform
+    ```
+
+2. Initialize Terraform:
+
+    ```bash
+    terraform init
+    ```
+
+3. Review and modify the `main.tf` and `variables.tf` files as needed to customize the Terraform configuration according to your requirements.
+
+4. Authenticate with Azure using the Azure CLI:
+
+    ```bash
+    az login
+    ```
+
+5. Run Terraform plan to preview the changes:
+
+    ```bash
+    terraform plan
+    ```
+
+6. If the plan looks correct, apply the Terraform configuration to provision the Azure infrastructure:
+
+    ```bash
+    terraform apply
+    ```
+
+7. Review the Terraform output for any errors or warnings. Once completed, the Azure resources should be provisioned successfully.
+
+## Cleanup
+
+To clean up and delete the Azure resources created by this Terraform configuration, run:
+
+```bash
+terraform destroy
+```
+
+Confirm the destruction when prompted.
+
+## Terraform Version
+
+This configuration was tested with Terraform version X.Y.Z.
+
+## License
+
+This project is licensed under the [MIT License](../LICENSE).
+
+---
+
+Feel free to customize this template according to your specific Terraform setup and project requirements. Include additional sections or information as needed to provide clarity and guidance to users.
